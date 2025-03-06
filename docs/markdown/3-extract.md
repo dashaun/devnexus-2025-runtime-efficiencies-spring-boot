@@ -18,7 +18,7 @@ Upgrade the pom.xml to Spring Boot 3.4.3 and Java 23.
 ```bash
 ./mvnw clean package 
 
-java -Djarmode=layertools \
+java -Djarmode=tools \
 -jar ./target/hello-spring-0.0.1-SNAPSHOT.jar \
 extract --destination application
 
