@@ -32,18 +32,24 @@ management.endpoints.web.exposure.include=*
 
 ```bash
 sdk use java 8.0.442-librca
+
 ./mvnw clean package
+
 java -jar target/hello-spring-0.0.1-SNAPSHOT.jar
 
-http :8080/actuator/metrics/application.started.time -o 2-7-java-8.started.json
-http :8080/actuator/metrics/jvm.memory.used -o 2-7-java-8.memory.json
+http :8080/actuator/metrics/application.started.time \
+-o 2-7-java-8.started.json
+http :8080/actuator/metrics/jvm.memory.used \
+-o 2-7-java-8.memory.json
 ```
 
 ---
 
 ```bash
 sdk use java 23.0.2-librca
+
 ./mvnw clean package
+
 java -jar target/hello-spring-0.0.1-SNAPSHOT.jar
 
 http :8080/actuator/metrics/application.started.time \

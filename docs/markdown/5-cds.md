@@ -12,16 +12,25 @@ To use it, you should first perform a training run on your application in extrac
 
 ```bash
 ./mvnw clean package
-java -Djarmode=tools -jar ./target/hello-spring-0.0.1-SNAPSHOT.jar extract --destination application
-java -XX:ArchiveClassesAtExit=application.jsa -Dspring.context.exit=onRefresh -jar application/hello-spring-0.0.1-SNAPSHOT.jar
+
+java -Djarmode=tools \
+-jar ./target/hello-spring-0.0.1-SNAPSHOT.jar \
+extract --destination application
+
+java -XX:ArchiveClassesAtExit=application.jsa \
+-Dspring.context.exit=onRefresh \
+-jar application/hello-spring-0.0.1-SNAPSHOT.jar
 ```
 > Create the shared archive
 
 ---
 
 ```bash
-java -XX:SharedArchiveFile=application.jsa -jar applicatin/hello-spring-0.0.1-SNAPSHOT.jar
+java -XX:SharedArchiveFile=application.jsa \
+-jar applicatin/hello-spring-0.0.1-SNAPSHOT.jar
 
-http :8080/actuator/metrics/application.started.time -o 3-4-java-23-cds.started.json
-http :8080/actuator/metrics/jvm.memory.used -o 3-4-java-23-cds.memory.json
+http :8080/actuator/metrics/application.started.time \
+-o 3-4-java-23-cds.started.json
+http :8080/actuator/metrics/jvm.memory.used \
+-o 3-4-java-23-cds.memory.json
 ```

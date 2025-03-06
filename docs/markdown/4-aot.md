@@ -78,8 +78,12 @@ Spring AOT will generate code like this for all your bean definitions.
 
 ```bash
 ./mvnw -q -Pnative clean package -DskipTests
-java -Dspring.aot.enabled=true -jar ./target/hello-spring-0.0.1-SNAPSHOT.jar
 
-http :8080/actuator/metrics/application.started.time -o 3-4-java-23-aot.started.json
-http :8080/actuator/metrics/jvm.memory.used -o 3-4-java-23-aot.memory.json
+java -Dspring.aot.enabled=true \
+-jar ./target/hello-spring-0.0.1-SNAPSHOT.jar
+
+http :8080/actuator/metrics/application.started.time \
+-o 3-4-java-23-aot.started.json
+http :8080/actuator/metrics/jvm.memory.used \
+-o 3-4-java-23-aot.memory.json
 ```
