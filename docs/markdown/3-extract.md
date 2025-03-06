@@ -2,7 +2,7 @@
 
 ---
 
-By "extract" -ing the Jar file, we can improv3e the startup time.
+By "extract" -ing the Jar file, we can improve the startup time.
 
 ---
 
